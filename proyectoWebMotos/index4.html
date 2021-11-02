@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Tienda de Motocicletas - G34 - G1</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+  <script type="text/javascript" src="./js/ppalMotos.js"></script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+	<div>
+		<img src="img/img_tiendaDeMotos1.png" width="660" height="140" />
+	  </div>
+	<div>
+
+  <!-- Tabs - Page -->
+	<div class="tabs-page">
+		<!-- Nav Tabs -->
+		<ul class="nav nav-tabs" role="tablist">
+			<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+			<li role="presentation"><a href="#clients" aria-controls="clients" role="tab" data-toggle="tab">Clients</a></li>
+			<li role="presentation"><a href="#categories" aria-controls="categories" role="tab" data-toggle="tab">Categories</a></li>
+			<li role="presentation"><a href="#motorbikes" aria-controls="motorbikes" role="tab" data-toggle="tab">Motorbikes</a></li>
+			<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+			<li role="presentation"><a href="#reservations" aria-controls="reservations" role="tab" data-toggle="tab">Reservations</a></li>
+			<li role="presentation"><a href="#reportes" aria-controls="reportes" role="tab" data-toggle="tab">Reportes</a></li>
+		</ul><!-- ./ nav tabs -->	
+	</div><!-- ./ tabs page -->
+
+	<div class="tabs-page">
+		<!-- Tab panes -->
+		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane active" id="home">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<h3 class="text-center">Ventana Principal</h3>
+							<h5 class="text-muted text-center">Bienvenido al aplicativo para la tienda de MOTOCICLETAS</h5>
+							<h5 class="text-muted text-center">Desarrollado por_ WILSON RIOS VALENCIA (G34 USA-MasterTech - MinTIC Misión TIC 2022)</h5>
+						
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-sm-12">
+							
+							<!-- Tabs - Secondary -->
+							<div class="tabs-secondary">
+								<h3 class="text-center">Ventana Principal</h3>
+							</div><!-- ./ tabs secondary -->	
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane active" id="clients">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<h3 class="text-center">REGISTRAR INFORMACIÓN DE CLIENTES</h3>
+							<h5 class="text-muted text-center">En esta página puede Crear, Consultar, Actualizar y Eliminar registros con información de CLIENTES</h5>
+							<!-- *********************************** INFORMACIÓN DE CLIENTES ********************************
+							Description:    Código para visualizar la información de CLIENTES interactuando con la BD
+							-->
+							<h2>INFORMACIÓN DE CLIENTES</h2>
+							<div id="resultadoClientes"></div>
+							<button onclick="traerInformacionClientes()">LISTADO DE CLIENTES</button>
+							<div>
+								<input type="number" id="CLid" placeholder="id">
+								<input type="text" id="CLname" placeholder="name">
+								<input type="text" id="CLemail" placeholder="email">
+								<input type="number" id="CLage" placeholder="age">
+							</div>
+							<button onclick="guardarInformacionClientes()"><img class="button-img" src="./ico/btnGuardar.png"></button>
+							<button onclick="editarInformacionCliente()"><img class="button-img" src="./ico/btnActualizar.png"></button>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<!-- *********************************** INFORMACIÓN DE CATEGORÍAS ********************************
+				Description:    Código para visualizar la información de CATEGORÍAS interactuando con la BD
+			-->
+			<div role="tabpanel" class="tab-pane active" id="categories">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<h3 class="text-center">REGISTRAR INFORMACIÓN DE CATEGORÍAS</h3>
+							<h5 class="text-muted text-center">En esta página puede Crear, Consultar, Actualizar y Eliminar registros con información de CATEGRORÍAS</h5>
+							
+							<h2>INFORMACIÓN DE CATEGORIAS</h2>
+							<div id="resultadoCategorias"></div>
+							<button onclick="traerInformacionCategorias()">LISTADO DE MENSAJES</button>
+							<div>
+								<input type="number" id="Cid" placeholder="id">
+								<input type="text" id="Cname" placeholder="Categoría">
+								<input type="text" id="Cdescription" placeholder="Descripción">
+							</div>
+							<button onclick="guardarInformacionCategorias()"><img class="button-img" src="./ico/btnGuardar.png"></button>
+							<button onclick="editarInformacionMensaje()"><img class="button-img" src="./ico/btnActualizar.png"></button>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<!-- *********************************** INFORMACIÓN DE MOTOCICLETAS ********************************
+				Description:    Código para visualizar la información de MOTOCICLETAS interactuando con la BD
+			-->
+			<div role="tabpanel" class="tab-pane active" id="motorbikes">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<h3 class="text-center">REGISTRAR INFORMACIÓN DE MOTOCICLETAS</h3>
+							<h5 class="text-muted text-center">En esta página puede Crear, Consultar, Actualizar y Eliminar registros con información de MOTOCICLETAS</h5>
+							
+							<h2>INFORMACIÓN DE MOTOS</h2>
+							<div id="resultadoMotos"></div>
+							<button onclick="traerInformacionMotos()">LISTADO DE MOTOS</button>
+							<div>
+								<input type="number" id="Mid" placeholder="id">
+								<input type="text" id="Mname" placeholder="Nombre">
+								<input type="text" id="Mbrand" placeholder="Marca">
+								<input type="number" id="Myear" placeholder="Modelo">
+								<input type="number" id="McategoryId" placeholder="categoryId">
+								<input type="text" id="Mdescription" placeholder="descripción">
+							</div>
+							<button onclick="guardarInformacionMotos()"><img class="button-img" src="./ico/btnGuardar.png"></button>
+							<button onclick="editarInformacionMotos()"><img class="button-img" src="./ico/btnActualizar.png"></button>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+
+			<!-- *********************************** INFORMACIÓN DE MENSAJES ********************************
+				Description:    Código para visualizar la información de MENSAJES interactuando con la BD
+			-->
+			<div role="tabpanel" class="tab-pane active" id="messages">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<h3 class="text-center">REGISTRAR INFORMACIÓN DE MENSAJES</h3>
+							<h5 class="text-muted text-center">En esta página puede Crear, Consultar, Actualizar y Eliminar registros con información de MENSAJES</h5>
+							
+							<h2>INFORMACIÓN DE MENSAJES</h2>
+							<div id="resultadoMensajes"></div>
+							<button onclick="traerInformacionMensajes()">LISTADO DE MENSAJES</button>
+							<div>
+								<input type="number" id="MSidMessage" placeholder="id">
+								<input type="text" id="MSmessagetext" placeholder="Texto del mensaje">
+								<!--
+								<input type="number" id="MSid" placeholder="Id moto">
+								<input type="number" id="MSidClient" placeholder="Id Cliente">
+								-->
+								<select id="select-client"></select>
+								<script type="text/javascript">
+									window.onload = autoInicioRelacionCliente();
+								</script>
+								<select id="select-moto"></select>
+								<script type="text/javascript">
+									window.onload = autoInicioMoto();
+								</script>
+							</div>
+							<button onclick="guardarInformacionMensajes()"><img class="button-img" src="./ico/btnGuardar.png"></button>
+							<button onclick="editarInformacionMensajes()"><img class="button-img" src="./ico/btnActualizar.png"></button>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+
+			<!-- *********************************** INFORMACIÓN DE RESERVACIONES ********************************
+				Description:    Código para visualizar la información de RESERVACIONES interactuando con la BD
+			-->
+			<div role="tabpanel" class="tab-pane active" id="reservations">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<h3 class="text-center">REGISTRAR INFORMACIÓN DE RESERVACIONES</h3>
+							<h5 class="text-muted text-center">En esta página puede Crear, Consultar, Actualizar y Eliminar registros con información de RESERVACIONES</h5>
+							
+							<h2>INFORMACIÓN DE RESERVACIONES</h2>
+							<div id="resultadoReservaciones"></div>
+							<button onclick="traerInformacionReservaciones()">LISTADO DE RESERVACIONES</button>
+							<div>
+								<label>Seleccione la Fecha Inicio de la Reservación</label>
+								<input class="controlReservation" type="date" id="RVstartDate" placeholder="startDate"><br>
+								<label>Seleccione la Fecha Devolucion de la Reservación</label>
+								<input class="controlReservation" type="date" id="RVdevolutionDate" placeholder="devolutionDate"><br>
+								<label>Estado de la Reservación "completed / cancelled</label>
+								<input class="controlReservation" type="text" id="RVstatus" placeholder="completed o cancelled">
+								<select id="select-client"></select>
+									<script type="text/javascript">
+										window.onload = autoInicioRelacionCliente();
+									</script>
+								<select id="select-moto"></select>
+									<script type="text/javascript">
+										window.onload = autoInicioMoto();
+									</script>
+								<!-- <button onclick=" agregarReservation()">Guardar Reserva</button> -->
+							</div>
+							<button onclick="guardarInformacionReservaciones()"><img class="button-img" src="./ico/btnGuardar.png"></button>
+							<button onclick="editarInformacionReservacion()"><img class="button-img" src="./ico/btnActualizar.png"></button>
+							<div id="miListaReservation"></div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+
+			<!-- *********************************** REPORTES ********************************
+				Description:    Código para visualizar la información de REPORTES interactuando con la BD
+			-->
+			<div role="tabpanel" class="tab-pane active" id="reportes">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<h3 class="text-center">REPORTES</h3>
+							<h5 class="text-muted text-center">En esta página puede los REPORTES del aplicativo</h5>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-sm-12">
+							
+							<!-- Tabs - Secondary -->
+							<div class="tabs-secondary">
+								<!-- Nav Tabs -->
+								<ul class="nav nav-tabs" role="tablist">
+									<li role="presentation" class="active"><a href="#child1" aria-controls="child1" role="tab" data-toggle="tab">Reporte 1</a></li>
+									<li role="presentation"><a href="#child2" aria-controls="child2" role="tab" data-toggle="tab">Reporte 2</a></li>
+									<li role="presentation"><a href="#child3" aria-controls="child3" role="tab" data-toggle="tab">Reporte 3</a></li>
+								</ul><!-- ./ nav tabs -->	
+							</div><!-- ./ tabs secondary -->	
+							<div id="#child1">
+								<h3 class="text-center">REPORTE STATUS RESERVAS</h3>
+								<h5 class="text-muted text-center">Los estados de las reservas son:</h5>
+								<button onclick="traerReporteStatus()"> Generar Reporte Status Reservas </button>
+    							<div id="resultadoStatus"></div>
+							</div>
+							<div id="#child2">
+								<h3 class="text-center">REPORTE POR FECHA</h3>
+								<h5 class="text-muted text-center">Los registros de reservas por fechas son:</h5>
+								<input type="date" id="RstarDate" placeholder="descripcion">
+								<input type="date" id="RdevolutionDate" placeholder="descripcion">
+								<button onclick="traerReporteDate()"> Generar Reporte por fecha </button>
+								<div id="resultadoDate"></div>
+							</div>
+							<div id="#child3">
+								<h3 class="text-center">REPORTE CLIENTES</h3>
+								<h5 class="text-muted text-center">Los registros de clientes con reservas son:</h5>
+								<button onclick="traerReporteClientes()"> Generar Reporte Clientes y Cantidad de reservas por cliente </button>
+    							<div id="resultadoClientes"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>		
+	</div>
+
+
+</div>
+</body>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+</body>
+</html>
