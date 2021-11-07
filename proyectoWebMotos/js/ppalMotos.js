@@ -565,7 +565,7 @@ function guardarInformacionClientes() {
         }
 
     //*****************************************************************************************//
-    //*********************************** MODULO RESERVACIONES ********************************//
+    //*********************************** MODULO REPORTES ********************************//
     //*****************************************************************************************//
     /**
         Function:       traerInformacionReservaciones()
@@ -579,12 +579,12 @@ function guardarInformacionClientes() {
             datatype:"JSON",
             success:function(respuesta){
                 console.log(respuesta);
-                pintarRespuesta(respuesta);
+                pintarRespuestaStatus(respuesta);
             }
         });
     }
 
-    function pintarRespuesta(respuesta){
+    function pintarRespuestaStatus(respuesta){
         let myTable="<table>";
         myTable+="<tr>";
             myTable+="<th>completadas</th>";
@@ -593,7 +593,7 @@ function guardarInformacionClientes() {
             myTable+="<td>"+respuesta.cancelled+"</td>";
             myTable+="</tr>";
         myTable+="</table>";
-        $("#resultadoStatus").html(myTable);
+        $("#reporteStatus").html(myTable);
     }
 
     function traerReporteDate(){
@@ -623,7 +623,7 @@ function guardarInformacionClientes() {
                 myTable+="</tr>";
             }
             myTable+="</table>";
-            $("#resultadoDate").html(myTable);
+            $("#respuestaDate").html(myTable);
         }
     
         function traerReporteClientes(){
@@ -650,6 +650,6 @@ function guardarInformacionClientes() {
                 myTable+="</tr>";
             }
             myTable+="</table>";
-            $("#resultadoClientes").html(myTable);
+            $("#reporteClientes").html(myTable);
         }
     
