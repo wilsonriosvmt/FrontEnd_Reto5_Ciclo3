@@ -88,7 +88,7 @@
         };
         let dataToSend = JSON.stringify(myData);
         $.ajax({
-            url: "http://152.70.212.97:8080/api/Moto/"+idElemento,
+            url: "http://152.70.212.97:8080/Motorbike/Moto/"+idElemento,
             type: "DELETE",
             data: dataToSend,
             contentType: "application/JSON",
